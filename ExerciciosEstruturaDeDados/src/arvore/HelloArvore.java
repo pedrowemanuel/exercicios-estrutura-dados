@@ -10,7 +10,7 @@ public class HelloArvore {
 		
 		System.out.println(arvoreBinario.searchNo("folha1").getDescricao());
 		System.out.println(arvoreBinario.searchNo("folha2").getDescricao());
-		
+
 		arvoreBinario.removeAllNo("folha1");
 		
 		System.out.println(arvoreBinario.searchNo("folha1").getDescricao());

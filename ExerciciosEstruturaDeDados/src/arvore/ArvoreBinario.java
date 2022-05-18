@@ -19,6 +19,7 @@ public class ArvoreBinario {
 
 	public void addNo(String Add, String posicao, NoBinario noPai) {
 		NoBinario noToAdd = new NoBinario(Add);
+
 		if (noPai == null) {
 			addFilho(noToAdd, posicao, root);
 		} else {
@@ -27,6 +28,7 @@ public class ArvoreBinario {
 	}
 
 	private void addFilho(NoBinario noToAdd, String posicao, NoBinario pai) {
+                noToAdd.setPai(pai);
 		if (posicao.equals("direita")) {
 			pai.setDireita(noToAdd);
 		} else {
@@ -40,15 +42,21 @@ public class ArvoreBinario {
 		removeAllNoRecursive(noFound);
 	}
 	
-	private void removeAllNoRecursive(NoBinario iterationNo) {
+	private void removeAllNoRecursive(
+                NoBinario iterationNo) {
 		if(iterationNo != null) {
-			if(iterationNo.getEsquerda() == null && iterationNo.getDireita() == null) {
-				iterationNo = null;
-			} else {				
+			if(iterationNo.getEsquerda() != null && iterationNo.getDireita() != null) {			
 				removeAllNoRecursive(iterationNo.getEsquerda());
 				removeAllNoRecursive(iterationNo.getDireita());
 			}
-			
+                        
+                        if(iterationNo == iterationNo.getPai().getEsquerda()) {			
+				iterationNo.getPai().setEsquerda(null);
+			}
+                        
+                        if(iterationNo == iterationNo.getPai().getDireita()) {			
+				iterationNo.getPai().setDireita(null);
+			}
 		}
 	}
 	
