@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ArvoreBinario {
 	private NoBinario root;
-	private ArrayList<String> descricoes = new ArrayList<>();
+	private ArrayList<String> descricoes;
 
 	public ArvoreBinario() {
 		super();

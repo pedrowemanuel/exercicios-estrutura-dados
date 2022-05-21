@@ -23,9 +23,9 @@ public class ArvoreBinario {
 	public void addNo(String Add, String posicao, NoBinario noPai) throws Exception {
 		NoBinario noToAdd = new NoBinario(Add);
 		
-		if(descricoes.indexOf(Add) == -1) {
-			throw new Exception("Esse nó já existe na árvore!");
-		}
+//		if(descricoes.indexOf(Add) == -1) {
+//			throw new Exception("Esse nó já existe na árvore!");
+//		}
 
 		if (noPai == null) {
 			addFilho(noToAdd, posicao, root);

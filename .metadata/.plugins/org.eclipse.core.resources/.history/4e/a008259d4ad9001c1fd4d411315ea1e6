@@ -1,10 +1,8 @@
 package arvore;
 
-import java.util.ArrayList;
-
 public class ArvoreBinario {
 	private NoBinario root;
-	private ArrayList<String> descricoes = new ArrayList<>();
+	private ArrayList<String> descricoes;
 
 	public ArvoreBinario() {
 		super();
@@ -20,20 +18,14 @@ public class ArvoreBinario {
 		}
 	}
 
-	public void addNo(String Add, String posicao, NoBinario noPai) throws Exception {
+	public void addNo(String Add, String posicao, NoBinario noPai) {
 		NoBinario noToAdd = new NoBinario(Add);
-		
-		if(descricoes.indexOf(Add) == -1) {
-			throw new Exception("Esse nó já existe na árvore!");
-		}
 
 		if (noPai == null) {
 			addFilho(noToAdd, posicao, root);
 		} else {
 			addFilho(noToAdd, posicao, noPai);
 		}
-		
-//		descricoes.add(Add);
 	}
 
 	private void addFilho(NoBinario noToAdd, String posicao, NoBinario pai) {
@@ -43,6 +35,8 @@ public class ArvoreBinario {
 		} else {
 			pai.setEsquerda(noToAdd);
 		}
+		
+		
 	}
 	
 	public void removeAllNo(String noToRemove) throws Exception {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ArvoreBinario {
 	private NoBinario root;
-	private ArrayList<String> descricoes = new ArrayList<>();
+	private ArrayList<String> descricoes;
 
 	public ArvoreBinario() {
 		super();
@@ -22,6 +22,8 @@ public class ArvoreBinario {
 
 	public void addNo(String Add, String posicao, NoBinario noPai) throws Exception {
 		NoBinario noToAdd = new NoBinario(Add);
+		
+		System.out.println(descricoes.indexOf(Add));
 		
 		if(descricoes.indexOf(Add) == -1) {
 			throw new Exception("Esse nó já existe na árvore!");
