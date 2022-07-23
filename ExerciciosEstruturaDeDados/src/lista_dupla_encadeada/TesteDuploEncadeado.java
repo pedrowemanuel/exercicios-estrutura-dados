@@ -3,7 +3,7 @@ package lista_dupla_encadeada;
 public class TesteDuploEncadeado {
 
 	public static void main(String[] args) {
-		ListaNo listaDupla = new ListaNo(null, null);
+		ListaDuploNo listaDupla = new ListaDuploNo(null, null);
 
 		listaDupla.add(new DuploNo("Daniel"));
 		listaDupla.add(new DuploNo("Joao"));

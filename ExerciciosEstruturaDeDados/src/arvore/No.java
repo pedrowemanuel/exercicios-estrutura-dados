@@ -15,4 +15,28 @@ public class No {
 		this.descricao = descricao;
 		this.filhos = filhos;
 	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public No[] getFilhos() {
+		return filhos;
+	}
+
+	public void setFilhos(No[] filhos) {
+		this.filhos = filhos;
+	}
+
+	public No getPai() {
+		return pai;
+	}
+
+	public void setPai(No pai) {
+		this.pai = pai;
+	}
 }
